@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 20px 40px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e94560;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 16px;
+  }
