@@ -35,4 +35,17 @@
     padding: 16px 24px;
     border-top: 1px solid #444;
     color: #888;
+  } 
+  .panel {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+  }
+  
+  .panel-secundario {
+    border-color: #888;
+  }
+  
+  .panel-titulo {
+    color: #2ecc71;
+    margin-top: 0;
   }
