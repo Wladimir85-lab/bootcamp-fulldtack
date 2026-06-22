@@ -1,21 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IAcademy</title>
-  <link rel="stylesheet" href="dia4-flexbox.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAcademy</title>
+    <link rel="stylesheet" href="dia4-flexbox.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="logo">IAcademy</div>
-    <nav class="nav">
-      <a href="#">Inicio</a>
-      <a href="#">Cursos</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
+    <!-- Círculo del puntero del mouse -->
+    <div class="custom-cursor" id="cursor"></div>
 
+    <div class="container">
+        <header class="header">
+            <div class="logo">IAcademy</div>
+            <nav class="nav">
+                <a href="#">Inicio</a>
+                <a href="#">Cursos</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Efecto de letras avanzando infinitamente -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                EL DÍA DEL FUTURO → IA ACADEMY → DISEÑO BRUTALISTA → EXPERIENCIA PREMIUM →&nbsp;
+            </div>
+            <div class="marquee-content">
+                EL DÍA DEL FUTURO → IA ACADEMY → DISEÑO BRUTALISTA → EXPERIENCIA PREMIUM →&nbsp;
+            </div>
+        </div>
+
+        <section class="hero">
+            <h1>Aprende Inteligencia Artificial desde Cero</h1>
+            <a href="#" class="btn-hero">Ver Cursos</a>
+        </section>
+
+        <!-- STATS BAR -->
+<section class="stats-bar">
+    <div class="stat">
+        <span class="stat-numero">1.200</span>
+        <span class="stat-label">Alumnos activos</span>
+    </div>
+    <div class="stat">
+        <span class="stat-numero">24</span>
+        <span class="stat-label">Cursos disponibles</span>
+    </div>
+    <div class="stat">
+        <span class="stat-numero">18</span>
+        <span class="stat-label">Países</span>
+    </div>
+    <div class="stat">
+        <span class="stat-numero">97%</span>
+        <span class="stat-label">Satisfacción</span>
+    </div>
+</section>
+
+        <main class="cursos-grid">
+            <article class="card">
+                <div class="card-image-placeholder">
+                    <!-- Aquí puedes poner la ruta de tus fotos cuando las agregues -->
+                    <img src="https://via.placeholder.com/400x250" alt="Prompt Engineering">
+                </div>
+                <h3>Prompt Engineering</h3>
+                <p>Optimiza tu tiempo con modelos de lenguaje.</p>
+                <a href="#" class="card-link">Explorar curso →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-image-placeholder">
+                    <img src="https://via.placeholder.com/400x250" alt="Automatización">
+                </div>
+                <h3>Automatización con IA</h3>
+                <p>Crea flujos de trabajo inteligentes sin código.</p>
+                <a href="#" class="card-link">Explorar curso →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-image-placeholder">
+                    <img src="https://via.placeholder.com/400x250" alt="Visión">
+                </div>
+                <h3>Visión Computacional</h3>
+                <p>Procesa e interpreta imágenes del mundo real.</p>
+                <a href="#" class="card-link">Explorar curso →</a>
+            </article>
+        </main>
+        <!-- POR QUÉ ELEGIRNOS -->
+<section class="por-que">
+    <h2 class="seccion-titulo">¿Por qué IAcademy?</h2>
+    <div class="beneficios">
+        <div class="beneficio">
+            <span class="beneficio-icono">⚡</span>
+            <h4>Aprendizaje acelerado</h4>
+            <p>Metodología práctica desde el primer día, sin relleno teórico.</p>
+        </div>
+        <div class="beneficio">
+            <span class="beneficio-icono">🌍</span>
+            <h4>Comunidad global</h4>
+            <p>Conecta con estudiantes de 18 países y construye tu red.</p>
+        </div>
+        <div class="beneficio">
+            <span class="beneficio-icono">🎯</span>
+            <h4>Proyectos reales</h4>
+            <p>Cada curso termina con un proyecto para tu portafolio.</p>
+        </div>
+    </div>
+</section>
+    </div>
+
+    <!-- Script sencillo para que el círculo siga al mouse -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
 </body>
 </html>

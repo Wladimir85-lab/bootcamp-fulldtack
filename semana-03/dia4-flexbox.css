@@ -1,26 +1,246 @@
+:root {
+  --bg-porcelana: #f4f4f4;      /* Gris pálido de fondo como en los premios VICE */
+  --bg-card:  #cdc6c6;           /* Gris sutil para los recuadros contenedores */
+  --text-principal: #111111;    /* Negro puro brutalista */
+  --text-secundario: #666666;
+  --accent-blue: #0a58ca;
+}
+
+/* RESET Y PUNTERO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #1a1a2e;
-    color: white;
-    padding: 20px 40px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #e94560;
-  }
-  
-  .nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 16px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-porcelana);
+  color: var(--text-principal);
+  padding: 40px 20px;
+  cursor: none; /* Oculta el mouse normal para usar el círculo personalizado */
+}
+
+/* CÍRCULO DEL PUNTERO */
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.15); /* Círculo gris traslúcido */
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Evita que el círculo interfiera con los clics */
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CABECERA EDITORIAL */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-principal);
+  font-weight: 600;
+  margin-left: 24px;
+}
+
+/* EFECTO DE LETRAS AVANZANDO (MARQUEE) */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: transparent;
+  padding: 20px 0;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-block;
+  font-size: 5rem; /* Letras gigantes de fondo */
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.08); /* Tono muy suave que va pasando detrás */
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* HERO SECTION */
+.hero {
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* RECUADROS CON TONO DE GRIS PREMIOS VICE */
+.cursos-grid {
+  display: flex;
+  gap: 30px;
+align-items: stretch; 
+}
+
+.card {
+  flex: 1;
+  background-color: var(--bg-card); /* Tono de gris de fondo */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 400px;
+  border-radius: 4px;
+}
+
+/* CONTENEDOR PARA CUANDO SUBAS FOTOS (COLORES VIVOS) */
+.card-image-placeholder {
+  width: 100%;
+  height: 220px;
+  background: #cccccc; 
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Sombra para resaltar la imagen */
+}
+
+.card-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que tus fotos mantengan colores vivos y perfectos */
+}
+
+.card h3 {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-secundario);
+  text-align: center;
+  margin: 10px 0;
+}
+
+.card-link {
+  text-decoration: none;
+  color: var(--text-principal);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+/* STATS BAR */
+.stats-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  margin-bottom: 60px;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-numero {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secundario);
+  margin-top: 4px;
+}
+/* POR QUÉ ELEGIRNOS */
+.por-que {
+  margin-top: 80px;
+}
+
+.seccion-titulo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.beneficio {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.beneficio-icono {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.beneficio h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.beneficio p {
+  font-size: 0.9rem;
+  color: var(--text-secundario);
+  line-height: 1.5;
+}
