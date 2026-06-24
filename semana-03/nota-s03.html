@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nota S03 - CSS Avanzado</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d0d1a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #00f5ff;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .subtitulo {
+      color: #888;
+      margin-bottom: 48px;
+      font-size: 0.95rem;
+    }
+
+    h2 {
+      color: #e94560;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      border-left: 4px solid #e94560;
+      padding-left: 12px;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #ccc;
+    }
+
+    code {
+      background-color: #1a1a2e;
+      color: #00f5ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    .seccion {
+      margin-bottom: 48px;
+    }
+
+    .demo-box {
+      background-color: #1a1a2e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Semana 03 — CSS Avanzado</h1>
+  <p class="subtitulo">Flexbox · Grid · Responsive Design — Bootcamp NCTO Solopreneur</p>
+<!-- SECCIÓN 1: FLEXBOX -->
+  <div class="seccion">
+    <h2>1. Flexbox</h2>
+    <p>Flexbox organiza elementos en <strong>una sola dirección</strong>: fila o columna. Es ideal para barras de navegación, botones y componentes internos.</p>
+    <p>La propiedad clave es <code>display: flex</code> en el contenedor padre. Los hijos se acomodan automáticamente.</p>
+    <p>Propiedades principales:</p>
+    <p><code>justify-content</code> — alinea horizontalmente · <code>align-items</code> — alinea verticalmente · <code>flex-wrap</code> — permite que los elementos salten de línea.</p>
+    <div class="demo-box">
+      <p style="color:#00f5ff; margin-bottom:12px;">Ejemplo real:</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="background:#e94560; padding:16px 24px; border-radius:6px; color:white;">Inicio</div>
+        <div style="background:#e94560; padding:16px 24px; border-radius:6px; color:white;">Cursos</div>
+        <div style="background:#e94560; padding:16px 24px; border-radius:6px; color:white;">Contacto</div>
+      </div>
+      <!-- SECCIÓN 2: CSS GRID -->
+  <div class="seccion">
+    <h2>2. CSS Grid</h2>
+    <p>Grid organiza elementos en <strong>filas y columnas al mismo tiempo</strong>. Es ideal para el layout general de una página completa.</p>
+    <p>La propiedad clave es <code>display: grid</code>. Con <code>grid-template-columns</code> defines cuántas columnas y qué tamaño tienen.</p>
+    <p><code>1fr</code> significa "una fracción del espacio disponible". <code>grid-template-columns: 2fr 1fr 1fr</code> crea 3 columnas donde la primera es el doble de ancha.</p>
+    <p>Para que un elemento ocupe varias columnas se usa <code>grid-column: 1 / 4</code> — desde la línea 1 hasta la línea 4 del grid.</p>
+    <div class="demo-box">
+      <p style="color:#00f5ff; margin-bottom:12px;">Ejemplo real:</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+        <div style="background:#e94560; padding:20px; border-radius:6px; color:white; text-align:center; grid-column: 1 / 4;">Header</div>
+        <div style="background:#333; padding:20px; border-radius:6px; color:white; text-align:center;">Sidebar</div>
+        <div style="background:#333; padding:20px; border-radius:6px; color:white; text-align:center;">Contenido</div>
+        <div style="background:#333; padding:20px; border-radius:6px; color:white; text-align:center;">Aside</div>
+      </div>
+      <!-- SECCIÓN 3: RESPONSIVE DESIGN -->
+  <div class="seccion">
+    <h2>3. Responsive Design</h2>
+    <p>Responsive Design significa que el layout <strong>se adapta automáticamente</strong> al tamaño de la pantalla — sin JavaScript, solo CSS.</p>
+    <p>La herramienta principal son los <code>@media queries</code>. Le dicen al navegador: "si la pantalla mide menos de X píxeles, aplica estas reglas".</p>
+    <p>El enfoque <strong>mobile-first</strong> diseña primero para móvil y luego agrega complejidad para pantallas grandes. Es el estándar de la industria hoy.</p>
+    <div class="demo-box">
+      <p style="color:#00f5ff; margin-bottom:12px;">Ejemplo real:</p>
+      <pre style="color:#ccc; font-size:0.85rem; line-height:1.8;">
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}</pre>
+      <p style="margin-top:12px;">Con menos de 768px → 1 columna (móvil). Con más → 3 columnas (desktop).</p>
+    </div>
+  </div>
+
+  <!-- CIERRE -->
+  <div class="seccion">
+    <h2>Resumen S03</h2>
+    <p><code>Flexbox</code> → una dirección, componentes internos.</p>
+    <p><code>Grid</code> → dos direcciones, layout completo de página.</p>
+    <p><code>@media queries</code> → el layout cambia según el tamaño de pantalla.</p>
+    <p style="color:#888; margin-top:32px;">Bootcamp NCTO Solopreneur · Semana 03 · Wladimir · Valdivia, Chile</p>
+  </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</body>
+</html>
